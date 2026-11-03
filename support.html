@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Support | teslastockllc</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-box">
+
+        <a href="../index.html" class="logo">
+            tesla<span>stock</span>llc.
+        </a>
+
+        <h1>Customer Support</h1>
+
+        <p>Send a message to our support team.</p>
+
+        <form id="supportForm"
+              onsubmit="
+                event.preventDefault();
+
+                const subject = document.getElementById('supportSubject').value.trim();
+                const message = document.getElementById('supportMessage').value.trim();
+
+                if (subject && message) {
+                    openSupport('Subject: ' + subject + '\nMessage: ' + message);
+                }
+              ">
+
+            <div class="form-group">
+
+                <label for="supportSubject">Subject</label>
+
+                <input
+                    id="supportSubject"
+                    type="text"
+                    required
+                    placeholder="Message subject">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="supportMessage">Message</label>
+
+                <textarea
+                    id="supportMessage"
+                    required
+                    placeholder="How can we help you?"></textarea>
+
+            </div>
+
+            <button class="btn btn-gold full-width" type="submit">
+                Continue to Live Chat
+            </button>
+
+            <p id="supportResponse" class="form-message"></p>
+
+        </form>
+
+        <div class="auth-footer">
+            <a href="dashboard.html">Back to Dashboard</a>
+        </div>
+
+        <div class="auth-footer">
+            <a href="../index.html">← Back to Homepage</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SMARTSUPP LIVE CHAT -->
+<script type="text/javascript">
+
+var _smartsupp = _smartsupp || {};
+
+_smartsupp.key = '58d624c89d3c921bb6a361cc09b33910e4ff1250';
+
+window.smartsupp || (function(d) {
+
+    var s, c, o = smartsupp = function() {
+        o._.push(arguments);
+    };
+
+    o._ = [];
+
+    s = d.getElementsByTagName('script')[0];
+    c = d.createElement('script');
+
+    c.type = 'text/javascript';
+    c.charset = 'utf-8';
+    c.async = true;
+
+    c.src = 'https://www.smartsuppchat.com/loader.js?';
+
+    s.parentNode.insertBefore(c, s);
+
+})(document);
+
+</script>
+
+</body>
+</html>

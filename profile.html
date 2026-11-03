@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Profile | teslastockllc</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-box">
+
+        <a href="../index.html" class="logo">
+            tesla<span>stock</span>llc.
+        </a>
+
+        <h1>My Profile</h1>
+
+        <p>Manage your personal information.</p>
+
+        <form id="profileForm"
+              onsubmit="event.preventDefault(); openSupport('Hello, I need assistance updating my profile information.');">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Full name"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email address"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone number">
+            </div>
+
+            <div class="form-group">
+                <label>Country</label>
+                <input
+                    type="text"
+                    id="country"
+                    placeholder="Country">
+            </div>
+
+            <button class="btn btn-gold full-width" type="submit">
+                Save Changes
+            </button>
+
+            <p id="profileMessage" class="form-message"></p>
+
+        </form>
+
+        <div class="auth-footer">
+            <a href="dashboard.html">Back to Dashboard</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Smartsupp Live Chat -->
+<script type="text/javascript">
+
+var _smartsupp = _smartsupp || {};
+
+_smartsupp.key = '58d624c89d3c921bb6a361cc09b33910e4ff1250';
+
+window.smartsupp || (function(d) {
+
+    var s, c, o = smartsupp = function() {
+        o._.push(arguments);
+    };
+
+    o._ = [];
+
+    s = d.getElementsByTagName('script')[0];
+    c = d.createElement('script');
+
+    c.type = 'text/javascript';
+    c.charset = 'utf-8';
+    c.async = true;
+
+    c.src = 'https://www.smartsuppchat.com/loader.js?';
+
+    s.parentNode.insertBefore(c, s);
+
+})(document);
+
+</script>
+
+</body>
+</html>

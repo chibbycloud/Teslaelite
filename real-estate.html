@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milla Real Estate | teslastockllc</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .real-hero {
+            padding: 90px 0;
+            background: linear-gradient(120deg, #080808, #1b1010);
+        }
+
+        .real-hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.1;
+            margin: 15px 0;
+        }
+
+        .real-hero h1 span {
+            color: #e82127;
+        }
+
+        .real-hero p {
+            color: #ccc;
+            max-width: 650px;
+            margin: 20px 0 30px;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .property-card {
+            background: #171717;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .property-card:hover {
+            transform: translateY(-6px);
+            border-color: #e82127;
+        }
+
+        .property-image {
+            height: 220px;
+            background: #292929;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            overflow: hidden;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .property-info {
+            padding: 22px;
+        }
+
+        .property-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .property-location {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .property-price {
+            color: #e82127;
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .property-tag {
+            display: inline-block;
+            background: rgba(232,33,39,.15);
+            color: #ff555a;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            margin-bottom: 12px;
+        }
+
+        .property-enquiry {
+            background: #181818;
+            border: 1px solid #e82127;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .property-enquiry h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .property-enquiry p {
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        @media(max-width: 850px) {
+            .property-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .property-enquiry {
+                padding: 25px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container nav-container">
+
+        <a href="../index.html" class="logo">
+            tesla<span>stock</span>llc.
+        </a>
+
+        <a href="../index.html" class="btn btn-outline">
+            Back Home
+        </a>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="real-hero">
+    <div class="container">
+
+        <span class="eyebrow">MILLA REAL ESTATE</span>
+
+        <h1>
+            Discover Properties.<br>
+            <span>Build Your Future.</span>
+        </h1>
+
+        <p>
+            Explore property opportunities, discover attractive
+            locations and connect with our real estate team for
+            property information and enquiries.
+        </p>
+
+        <a href="#properties" class="btn btn-red">
+            Explore Properties
+        </a>
+
+    </div>
+</section>
+
+<!-- PROPERTY LISTINGS -->
+<section class="section" id="properties">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">PROPERTY COLLECTION</span>
+
+            <h2>Featured Properties</h2>
+
+            <p>
+                Explore our featured property categories.
+                Contact our team to confirm availability,
+                ownership and pricing.
+            </p>
+        </div>
+
+        <div class="property-grid">
+
+            <!-- PROPERTY 1 -->
+            <div class="property-card">
+
+                <div class="property-image">
+                    <img src="../images/property-1.jpg"
+                         alt="Modern luxury residential house"
+                         onerror="this.style.display='none';">
+                </div>
+
+                <div class="property-info">
+
+                    <span class="property-tag">
+                        Featured Property
+                    </span>
+
+                    <h3>Luxury Residential Property</h3>
+
+                    <p class="property-location">
+                        Prime Location
+                    </p>
+
+                    <div class="property-price">
+                        Price on Request
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn btn-red full-width"
+                        onclick="openSupport('Hello, I am interested in the Luxury Residential Property. Please provide more information.')">
+                        Enquire Now
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- PROPERTY 2 -->
+            <div class="property-card">
+
+                <div class="property-image">
+                    <img src="../images/property-2.jpg"
+                         alt="Modern apartment building"
+                         onerror="this.style.display='none';">
+                </div>
+
+                <div class="property-info">
+
+                    <span class="property-tag">
+                        Apartments
+                    </span>
+
+                    <h3>Modern Apartment</h3>
+
+                    <p class="property-location">
+                        Prime Location
+                    </p>
+
+                    <div class="property-price">
+                        Price on Request
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn btn-red full-width"
+                        onclick="openSupport('Hello, I am interested in the Modern Apartment. Please provide more information.')">
+                        Enquire Now
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- PROPERTY 3 -->
+            <div class="property-card">
+
+                <div class="property-image">
+                    <img src="../images/property-3.jpg"
+                         alt="Residential land development"
+                         onerror="this.style.display='none';">
+                </div>
+
+                <div class="property-info">
+
+                    <span class="property-tag">
+                        Land Opportunities
+                    </span>
+
+                    <h3>Land and Development</h3>
+
+                    <p class="property-location">
+                        Selected Locations
+                    </p>
+
+                    <div class="property-price">
+                        Price on Request
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn btn-red full-width"
+                        onclick="openSupport('Hello, I am interested in the Land and Development opportunities. Please provide more information.')">
+                        Enquire Now
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHY MILLA -->
+<section class="section" style="background:#111;">
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">WHY MILLA</span>
+
+            <h2>Property Opportunities Made Clear</h2>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">01</div>
+
+                <h3>Property Discovery</h3>
+
+                <p>
+                    Explore available property categories and locations.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">02</div>
+
+                <h3>Direct Enquiries</h3>
+
+                <p>
+                    Contact the team for property information
+                    and viewing arrangements.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">03</div>
+
+                <h3>Investment Research</h3>
+
+                <p>
+                    Review property details, costs, legal
+                    documentation and risks before making decisions.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ENQUIRY -->
+<section class="section">
+    <div class="container">
+
+        <div class="property-enquiry">
+
+            <span class="eyebrow">
+                LET'S TALK PROPERTY
+            </span>
+
+            <h2>Find Your Next Opportunity</h2>
+
+            <p>
+                Interested in a property or want to discuss
+                a real estate opportunity? Contact our team
+                for more information.
+            </p>
+
+            <button
+                type="button"
+                class="btn btn-red"
+                onclick="openSupport('Hello, I would like to speak with the Milla Real Estate team about property opportunities.')">
+                Contact Milla Real Estate
+            </button>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+                <a href="../index.html" class="logo">
+                    tesla<span>stock</span>llc.
+                </a>
+
+                <p>
+                    Milla Real Estate — Property discovery and enquiries.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © <span id="year"></span> teslastockllc. All rights reserved.
+        </div>
+
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+
+<!-- Smartsupp Live Chat -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '58d624c89d3c921bb6a361cc09b33910e4ff1250';
+
+window.smartsupp || (function(d) {
+    var s, c, o = smartsupp = function() {
+        o._.push(arguments)
+    };
+
+    o._ = [];
+
+    s = d.getElementsByTagName('script')[0];
+    c = d.createElement('script');
+
+    c.type = 'text/javascript';
+    c.charset = 'utf-8';
+    c.async = true;
+
+    c.src = 'https://www.smartsuppchat.com/loader.js?';
+
+    s.parentNode.insertBefore(c, s);
+
+})(document);
+</script>
+
+</body>
+</html>

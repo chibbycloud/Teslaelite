@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MILLER - Admin Settings</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+body {
+    background: #080d18;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+h1 { color: #d4af37; }
+.card {
+    background: #141d2e;
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+label {
+    display: block;
+    margin-top: 15px;
+}
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background: #080d18;
+    color: white;
+    border: 1px solid #39445a;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #d4af37;
+    color: #080d18;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.back {
+    color: #d4af37;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="dashboard.html" class="back">← Admin Dashboard</a>
+
+<h1>Platform Settings</h1>
+<p>Manage MILLER platform configuration.</p>
+
+<div class="card">
+<h3>General Settings</h3>
+
+<label>Platform Name</label>
+<input type="text" id="platformName" value="MILLER">
+
+<label>Support Email</label>
+<input type="email" id="supportEmail" placeholder="support@example.com">
+
+<label>Default Currency</label>
+<select id="currency">
+<option value="NGN">Nigerian Naira (₦)</option>
+<option value="USD">US Dollar ($)</option>
+</select>
+
+<button onclick="saveSettings()">Save Settings</button>
+</div>
+
+<div class="card">
+<h3>Platform Information</h3>
+<p>Platform: MILLER</p>
+<p>Version: 1.0.0</p>
+<p>Environment: Development</p>
+<p>Backend: Pending Integration</p>
+</div>
+
+</div>
+
+<script>
+function saveSettings() {
+
+const settings = {
+    name: document.getElementById("platformName").value,
+    email: document.getElementById("supportEmail").value,
+    currency: document.getElementById("currency").value
+};
+
+localStorage.setItem(
+    "millerSettings",
+    JSON.stringify(settings)
+);
+
+alert("Settings saved successfully!");
+
+}
+</script>
+
+</body>
+</html>

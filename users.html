@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MILLER - User Management</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+body {
+    background: #080d18;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1 { color: #d4af37; }
+
+.card {
+    background: #141d2e;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 15px;
+}
+
+.stat {
+    background: #1c2940;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.stat h2 { color: #d4af37; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    background: #080d18;
+    border: 1px solid #39445a;
+    color: white;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 13px;
+    border-bottom: 1px solid #29354a;
+    text-align: left;
+}
+
+th { color: #d4af37; }
+
+.back {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.badge {
+    padding: 5px 9px;
+    border-radius: 5px;
+    background: #16834a;
+    font-size: 12px;
+}
+
+@media(max-width:600px) {
+    body { padding: 12px; }
+    th, td { padding: 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="dashboard.html" class="back">
+← Admin Dashboard
+</a>
+
+<h1>User Management</h1>
+<p>View and manage registered platform users.</p>
+
+<div class="stats">
+
+<div class="stat">
+<h3>Total Users</h3>
+<h2 id="totalUsers">0</h2>
+</div>
+
+<div class="stat">
+<h3>Active Users</h3>
+<h2 id="activeUsers">0</h2>
+</div>
+
+<div class="stat">
+<h3>Inactive Users</h3>
+<h2 id="inactiveUsers">0</h2>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Registered Users</h3>
+
+<input
+type="text"
+id="search"
+placeholder="Search users by name or email..."
+oninput="loadUsers()"
+>
+
+<div style="overflow-x:auto;">
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Date Joined</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody id="userList">
+<tr>
+<td colspan="4">No registered users available.</td>
+</tr>
+</tbody>
+
+</table>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function loadUsers() {
+
+const users = JSON.parse(
+localStorage.getItem("millerUsers") || "[]"
+);
+
+const search = document
+.getElementById("search")
+.value.toLowerCase();
+
+const filtered = users.filter(user =>
+(user.name || "").toLowerCase().includes(search) ||
+(user.email || "").toLowerCase().includes(search)
+);
+
+const list = document.getElementById("userList");
+
+let active = 0;
+let inactive = 0;
+
+users.forEach(user => {
+if (user.status === "Inactive") {
+inactive++;
+} else {
+active++;
+}
+});
+
+document.getElementById("totalUsers").textContent =
+users.length;
+
+document.getElementById("activeUsers").textContent =
+active;
+
+document.getElementById("inactiveUsers").textContent =
+inactive;
+
+if (filtered.length === 0) {
+
+list.innerHTML = `
+<tr>
+<td colspan="4">No matching users found.</td>
+</tr>`;
+
+return;
+
+}
+
+list.replaceChildren();
+
+filtered.forEach(user => {
+
+const row = document.createElement("tr");
+
+[
+user.name || "Unknown",
+user.email || "N/A",
+user.date || "N/A",
+user.status || "Active"
+].forEach((value, index) => {
+
+const cell = document.createElement("td");
+cell.textContent = value;
+
+if (index === 3) {
+const badge = document.createElement("span");
+badge.className = "badge";
+badge.textContent = value;
+cell.replaceChildren(badge);
+}
+
+row.appendChild(cell);
+
+});
+
+list.appendChild(row);
+
+});
+
+}
+
+loadUsers();
+
+</script>
+
+</body>
+</html>

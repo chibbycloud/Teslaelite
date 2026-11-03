@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Portfolio | teslastockllc</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <a href="../index.html" class="logo">
+            tesla<span>stock</span>llc.
+        </a>
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="wallet.html">Wallet</a>
+
+        <a href="investments.html">Tesla Investment</a>
+
+        <a href="digital-assets.html">Digital Assets</a>
+
+        <a class="active" href="portfolio.html">Portfolio</a>
+
+        <a href="transactions.html">Transactions</a>
+
+        <a href="#" onclick="event.preventDefault(); openSupport('Hello, I need assistance with my investment portfolio.');">
+            Support
+        </a>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <h1>My Portfolio</h1>
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card">
+                <p>Total Invested</p>
+                <h2>—</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <p>Current Value</p>
+                <h2>—</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <p>Profit / Loss</p>
+                <h2>—</h2>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-panel">
+
+            <h2>Investment Holdings</h2>
+
+            <div class="empty-state">
+                Your investment holdings will appear here
+                after your account is securely connected.
+            </div>
+
+            <br>
+
+            <button
+                type="button"
+                class="btn btn-gold"
+                onclick="openSupport('Hello, I would like assistance understanding my investment portfolio.')">
+                Contact Support
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- SMARTSUPP LIVE CHAT -->
+<script type="text/javascript">
+
+var _smartsupp = _smartsupp || {};
+
+_smartsupp.key = '58d624c89d3c921bb6a361cc09b33910e4ff1250';
+
+window.smartsupp || (function(d) {
+
+    var s, c, o = smartsupp = function() {
+        o._.push(arguments);
+    };
+
+    o._ = [];
+
+    s = d.getElementsByTagName('script')[0];
+    c = d.createElement('script');
+
+    c.type = 'text/javascript';
+    c.charset = 'utf-8';
+    c.async = true;
+
+    c.src = 'https://www.smartsuppchat.com/loader.js?';
+
+    s.parentNode.insertBefore(c, s);
+
+})(document);
+
+</script>
+
+</body>
+</html>

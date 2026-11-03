@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Deposit | teslastockllc</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-box">
+
+        <a href="../index.html" class="logo">
+            tesla<span>stock</span>llc.
+        </a>
+
+        <h1>Make a Deposit</h1>
+
+        <p>Select your preferred deposit method.</p>
+
+        <form id="depositForm">
+
+            <div class="form-group">
+                <label>Deposit Method</label>
+
+                <select id="depositMethod" required>
+                    <option value="">Select method</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <option value="Bitcoin (BTC)">Bitcoin (BTC)</option>
+                    <option value="Ethereum (ETH)">Ethereum (ETH)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Amount</label>
+
+                <input
+                    type="number"
+                    id="depositAmount"
+                    min="1"
+                    step="any"
+                    placeholder="Enter amount"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Currency</label>
+
+                <select id="depositCurrency" required>
+                    <option value="USD">USD</option>
+                    <option value="NGN">NGN</option>
+                </select>
+            </div>
+
+            <button class="btn btn-gold full-width" type="submit">
+                Continue
+            </button>
+
+            <p id="depositMessage" class="form-message"></p>
+
+        </form>
+
+        <div class="auth-footer">
+            <a href="dashboard.html">Back to Dashboard</a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Smartsupp Live Chat -->
+<script type="text/javascript">
+
+var _smartsupp = _smartsupp || {};
+
+_smartsupp.key = '58d624c89d3c921bb6a361cc09b33910e4ff1250';
+
+window.smartsupp || (function(d) {
+
+    var s, c, o = smartsupp = function() {
+        o._.push(arguments);
+    };
+
+    o._ = [];
+
+    s = d.getElementsByTagName('script')[0];
+    c = d.createElement('script');
+
+    c.type = 'text/javascript';
+    c.charset = 'utf-8';
+    c.async = true;
+
+    c.src = 'https://www.smartsuppchat.com/loader.js?';
+
+    s.parentNode.insertBefore(c, s);
+
+})(document);
+
+</script>
+
+</body>
+</html>
